@@ -1,0 +1,150 @@
+<div class="container">
+
+    <h3  style ='padding-top:5px;font-weight:bold'>EDIT TRADE INITIATION</h3>
+    <hr/>
+    <form [formGroup]="myForm"  class="form-container">
+
+      <div class="row">
+
+<div class="col-md-3">
+  <mat-form-field appearance="outline" class="form-field">
+    <mat-label>TID</mat-label>
+    <input matInput [value]="id" readonly>
+  </mat-form-field>
+
+
+</div>
+<div class="col-md-3">
+  <mat-form-field appearance="outline" class="form-field">
+    <mat-label>CR Reference Number</mat-label>
+ 
+    <input matInput formControlName="crReferenceNumber" required>
+  </mat-form-field>
+
+
+</div>
+
+
+
+<div class="row">
+ <div class="col-md-3">
+
+
+
+  <mat-form-field appearance="outline" class="form-field custom-mat-field">
+    <mat-label>Date</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="tradeinitiationDate" required>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+ </div>
+
+
+<div class="col-md-3">
+
+
+  <mat-form-field appearance="outline" class="form-field">
+    <mat-label>Customer</mat-label>
+    <mat-select formControlName="customer" required>
+      <!-- Include ngx-mat-select-search inside mat-select -->
+      <ngx-mat-select-search [formControl]="customerSearchControl"></ngx-mat-select-search>
+      <!-- Display mat-option for each customer -->
+      <mat-option *ngFor="let customer of filteredCustomers" [value]="customer.id">
+        {{ customer.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+<div class="row">
+
+<div class="col-md-6">
+<mat-form-field appearance="outline" class="form-field">
+<mat-label>
+Customer Payment Terms
+</mat-label>
+<mat-select formControlName="paymentmethod">
+<ngx-mat-select-search  [formControl]="paymentSearchControl">
+
+
+
+</ngx-mat-select-search>
+
+<mat-option *ngFor="let pay of filterPaymentmethod" [value]="pay.cPaymentmethodId">
+  {{ pay.cPaymentmethodName }}
+</mat-option>
+
+
+
+
+
+
+
+
+
+
+
+</mat-select>
+
+</mat-form-field >
+
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+<div class="row">
+
+<div class="col-md-12">
+
+
+  <ag-grid-angular 
+  style="width:1000px; height: 300px; border: 1px solid black;"
+  class="ag-theme-alpine" 
+  [rowData]="rowData"  
+  [columnDefs]="columnDefs" (gridReady)="onGridReady($event)"  [gridOptions]="gridOptions" >
+</ag-grid-angular>
+
+
+
+</div>
+
+
+
+
+</div>
+
+     
+
+
+    
+
+
+
+      
+</form>
+</div>

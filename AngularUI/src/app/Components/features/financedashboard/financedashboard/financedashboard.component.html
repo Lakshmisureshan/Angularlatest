@@ -1,0 +1,51 @@
+<div class="container" style="padding: 10px;">
+  <div class="notification-container">
+    <app-notification-icon [notificationCount]="notificationCount" (click)="togglePopup()"></app-notification-icon>
+    <div class="popup" *ngIf="popupVisible">
+      <h3>Notifications</h3>
+      <table class="table table-bordered table-striped table-hover">
+      
+        <tbody>
+          <tr *ngFor="let cu of noti">
+            <td  class="fixed-width">{{ cu?.remarks }}</td>
+       
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+ <app-coloredbox></app-coloredbox>
+  <div class="ag-theme-alpine">
+    <ag-grid-angular 
+      style="width:auto; height: 300px; border: 1px solid black;color:black"
+      class="ag-theme-alpine"
+      [rowData]="rowData"
+      [columnDefs]="columnDefs"
+      (gridReady)="onGridReady($event)"
+    ></ag-grid-angular>
+  </div>
+
+
+  <div class="ag-theme-alpine">
+    <ag-grid-angular 
+      style="width:auto; height: 300px; border: 1px solid black;color:black"
+      class="ag-theme-alpine"
+      [rowData]="rowData1"
+      [columnDefs]="columnDefs1"
+      (gridReady)="onGridReady1($event)"
+    ></ag-grid-angular>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+</div>

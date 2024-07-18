@@ -1,0 +1,30 @@
+.form-container {
+    border: 1px solid #333; /* Change the color and width as needed */
+    padding: 20px; /* Add some padding for better appearance */
+    border-radius: 5px; /* Optional: Add border radius for rounded corners */
+    background-color: white; /* Optional: Add a background color */
+  }
+  .full-width {
+    width: 100%;
+  }
+
+  .ag-theme-alpine {
+    --ag-header-foreground-color: white; /* Header text color */
+    --ag-header-column-separator-display: block;
+    --ag-header-background-color:#57adf4;
+    --ag-cell-horizontal-border: var(--ag-row-border-width) var(--ag-row-border-style) var(--ag-row-border-color);
+
+    --ag-foreground-color: rgb(14, 68, 145);
+    /* Changes the color of the grid background */
+    --ag-background-color: rgb(241, 247, 255);
+    /* Changes the header color of the top row */
+    --ag-header-background-color: rgb(228, 237, 250);
+    /* Changes the hover color of the row*/
+    --ag-row-hover-color: rgb(216, 226, 255);
+
+
+
+
+
+
+}

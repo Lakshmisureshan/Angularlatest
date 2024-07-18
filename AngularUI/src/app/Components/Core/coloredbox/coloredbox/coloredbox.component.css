@@ -1,0 +1,63 @@
+.dashboard-container {
+    padding: 10px;
+  }
+  
+  .dashboard-card {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .custom-card mat-card-header {
+    margin-bottom: 0; 
+  }
+
+  .mat-card-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card-icon {
+    background: none;
+  }
+  
+  .orders-received {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
+  
+  .delivered {
+    background-color: #673AB7; /* Purple */
+    color: white;
+  }
+  
+  .new-orders {
+    background-color: #FF9800; /* Orange */
+    color: white;
+  }
+  
+  .total-earning {
+    background-color: #03A9F4; /* Light Blue */
+    color: white;
+  }
+  mat-card-title {
+    font-size: 12px; /* Adjust the size as needed */
+    font-weight: bold; /* Optional: make the text bold */
+    line-height: 1.2; /* Optional: adjust line height */
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  mat-card-header {
+    display: flex;
+    align-items: center;
+  }
+  
+  mat-card-header mat-icon {
+    font-size: 20px;
+  }
+  
+  mat-card-content h2 {
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+  }
+  

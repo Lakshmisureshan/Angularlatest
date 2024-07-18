@@ -1,0 +1,11 @@
+<div class="container">
+
+  <h3  style ='padding:2px; font-weight: bold;'>TRADE INITIATION LIST</h3>
+  <hr>
+    <ag-grid-angular 
+    style="width:1300px; height: 300px; border: 1px solid black;"
+    class="ag-theme-alpine" [rowHeight]="55"
+    [rowData]="rowData"  
+    [columnDefs]="columnDefs"  (gridReady)="onGridReady($event)"  [gridOptions]="gridOptions">
+  </ag-grid-angular>
+</div>

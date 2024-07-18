@@ -1,0 +1,133 @@
+<div class="grid-container">
+  <div class="notification-button-wrapper">
+    <button mat-icon-button [matBadge]="notificationCount" matBadgePosition="above after" matBadgeColor="warn" (click)="openNotifications()">
+      <mat-icon>notifications</mat-icon>
+    </button>
+  </div>
+  <h1 class="mat-h1">Dashboard</h1>
+  <mat-grid-list cols="{{ ( cardLayout | async )?.columns }}" rowHeight="100px">
+    <!-- Mini Cards -->
+    <mat-grid-tile  [colspan]="( cardLayout | async )?.miniCard?.cols"
+      [rowspan]="( cardLayout | async )?.miniCard?.rows" >
+      <app-card   >
+        <mat-card-content>
+          <div class="card-content">
+            <mat-icon>account_balance_wallet</mat-icon>
+            <div class="card-text">
+              <h3>New Requirement:   {{newrequirement}}</h3>
+            
+            </div>
+          </div>
+        </mat-card-content>
+      </app-card>
+      
+    </mat-grid-tile>
+    <mat-grid-tile  [colspan]="( cardLayout | async )?.miniCard?.cols"
+    [rowspan]="( cardLayout | async )?.miniCard?.rows">
+    <app-card >
+      <mat-card-content>
+        <div class="card-content">
+          <mat-icon>settings</mat-icon>
+          <div class="card-text">
+            <h3>Trade Initiated:   {{tradeinitiation}}</h3>
+          
+          </div>
+        </div>
+      </mat-card-content>
+    </app-card>
+    
+  </mat-grid-tile>
+  <mat-grid-tile  [colspan]="( cardLayout | async )?.miniCard?.cols"
+  [rowspan]="( cardLayout | async )?.miniCard?.rows">
+  <app-card >
+    <mat-icon matListIcon>info</mat-icon>
+  </app-card>
+  
+</mat-grid-tile>
+<mat-grid-tile  [colspan]="( cardLayout | async )?.miniCard?.cols"
+[rowspan]="( cardLayout | async )?.miniCard?.rows">
+<app-card >
+  <mat-icon matListIcon>favorite</mat-icon>
+</app-card>
+
+</mat-grid-tile>
+    <!-- Charts -->
+  
+    <!-- Table -->
+ 
+  </mat-grid-list>
+
+  <mat-grid-list cols="{{ ( cardLayout | async )?.columns }}" >
+    <mat-grid-tile  [colspan]="( cardLayout | async )?.chart?.cols"
+    [rowspan]="( cardLayout | async )?.miniCard?.rows">
+    <app-card title="New Requirement">
+      <app-product-sales-chart></app-product-sales-chart>
+    </app-card>
+    
+    </mat-grid-tile>
+    <mat-grid-tile  [colspan]="( cardLayout | async )?.chart?.cols"
+    [rowspan]="( cardLayout | async )?.miniCard?.rows">
+    <app-card title="New Requirement">
+      <div >
+        <app-sales-traffic-chart ></app-sales-traffic-chart>
+      </div>
+    </app-card>
+    
+    </mat-grid-tile>
+
+    <mat-grid-tile  [colspan]="( cardLayout | async )?.chart?.cols"
+    [rowspan]="( cardLayout | async )?.miniCard?.rows">
+    <app-card title="New Customer Requirement awaiting Approval">
+      <div >
+        <ag-grid-angular 
+        style="width:auto; height: 300px; border: 1px solid black;color:black"
+        class="ag-theme-alpine"
+        [rowData]="rowData"
+        [columnDefs]="columnDefs"
+        (gridReady)="onGridReady($event)"
+      ></ag-grid-angular>
+      </div>
+    </app-card>
+    
+    </mat-grid-tile>
+    <mat-grid-tile  [colspan]="( cardLayout | async )?.chart?.cols"
+    [rowspan]="( cardLayout | async )?.miniCard?.rows">
+    <app-card title="New Requirement">
+      <div >
+        <app-product-sales-chart></app-product-sales-chart>
+      </div>
+    </app-card>
+    
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <mat-grid-list cols="{{ ( cardLayout | async )?.columns }}" rowHeight="100px">
+    <mat-grid-tile  [colspan]="( cardLayout | async )?.chart?.cols"
+    [rowspan]="( cardLayout | async )?.table?.rows">
+    <app-card title="Trade Initiation Awaiting Approval"  style="color:rgb(53, 46, 187)">
+      <div class="ag-theme-alpine">
+        <ag-grid-angular 
+        style="width:auto; height: 300px; border: 1px solid black;color:black"
+        class="ag-theme-alpine"
+        [rowData]="rowData1"
+        [columnDefs]="columnDefs1"
+        (gridReady)="onGridReady1($event)"
+      ></ag-grid-angular>
+      </div>
+    </app-card>
+    
+    </mat-grid-tile>
+    <mat-grid-tile  [colspan]="( cardLayout | async )?.chart?.cols"
+    [rowspan]="( cardLayout | async )?.table?.rows">
+    <app-card title="Product Sales">
+      
+      <app-orders-table></app-orders-table>
+
+
+    </app-card>
+    
+    </mat-grid-tile>
+  </mat-grid-list>
+
+
+</div>

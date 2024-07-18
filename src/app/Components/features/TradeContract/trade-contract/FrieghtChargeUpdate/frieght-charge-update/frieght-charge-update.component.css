@@ -1,0 +1,6 @@
+.form-container {
+    border: 1px solid #333; /* Change the color and width as needed */
+    padding: 20px; /* Add some padding for better appearance */
+    border-radius: 5px; /* Optional: Add border radius for rounded corners */
+    background-color: white; /* Optional: Add a background color */
+  }

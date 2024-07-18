@@ -1,0 +1,12 @@
+<div class="container">
+
+    <h3  style ='padding:4px; font-weight: bold;'>TRADE CONTRACT LIST</h3>
+    <hr>
+      <ag-grid-angular 
+      style="width:1200px; height: 1200px; border: 1px solid black;"
+      class="ag-theme-alpine" [rowHeight]="185"
+      [rowData]="rowData"  
+      [columnDefs]="columnDefs"  (gridReady)="onGridReady($event)"  [gridOptions]="gridOptions">
+    </ag-grid-angular>
+  </div>
+  

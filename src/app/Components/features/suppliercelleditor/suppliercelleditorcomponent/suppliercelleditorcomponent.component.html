@@ -1,0 +1,12 @@
+<form [formGroup]="tradeForm1" style="width: 10px;height:10px">
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>supplier</mat-label>
+      <mat-select formControlName="supplier"  (selectionChange)="onSupplierSelected($event)">>
+        <ngx-mat-select-search [formControl]="supplierSearchControl"></ngx-mat-select-search>
+        <mat-option *ngFor="let sup of filteredsupplier" [value]="sup.sId">
+          {{sup.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+

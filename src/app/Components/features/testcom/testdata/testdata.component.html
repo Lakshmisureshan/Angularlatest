@@ -1,0 +1,114 @@
+
+
+
+<div class="container">
+
+    <h2  style ="font-weight: bold;">TRADE INITIATION FORM</h2>
+ 
+            <form (ngSubmit)="onSubmit()" class="form-container">
+                <div class="form-row"  style="margin-top: 3rem;">
+                    <div class="row">
+                    <div  class="col-md-5 col-lg-6">
+                    <mat-form-field appearance="outline" class="form-field custom-width">
+                      <mat-label>Trade Initiation Number</mat-label>
+                      <input matInput formControlName="tradeInitiationNumber" required>
+                    </mat-form-field>
+                  </div>
+              
+                  <div  class="col-md-4 col-lg-4">
+                    <mat-form-field appearance="outline" class="form-field">
+                      <mat-label>CR Reference Number</mat-label>
+                      <input matInput [value]="id" readonly>
+                    </mat-form-field>
+                  </div>
+                  <div  class="col-md-1 col-lg-1">
+                  <button mat-raised-button color="primary" type="submit">Save</button>
+              </div>
+              <div  class="col-md-1 col-lg-1">
+              
+              </div>
+              <div  class="col-md-1 col-lg-1">
+                <button mat-raised-button color="warning" type="submit">Reset</button>
+              </div>
+                  </div>
+                  </div>
+
+                  <div class="form-row">
+                    <mat-form-field appearance="outline" class="form-field">
+                      <mat-label>Date</mat-label>
+                      <input matInput [matDatepicker]="picker" formControlName="date" required>
+                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                      <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="row">
+                    <div  class="col-md-6 col-lg-6">
+              
+                    <mat-form-field appearance="outline" class="form-field">
+                      <mat-label>Customer</mat-label>
+                      <mat-select formControlName="customer" required>
+                        <!-- Include ngx-mat-select-search inside mat-select -->
+                        <ngx-mat-select-search [formControl]="customerSearchControl"></ngx-mat-select-search>
+                        <!-- Display mat-option for each customer -->
+                        <mat-option *ngFor="let customer of filteredCustomers" [value]="customer.id">
+                          {{ customer.name }}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                 </div>
+                 <div class="col-md-6">
+                  <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Customer Payment Terms </mat-label>
+                    <mat-select formControlName="customerpaymentterms" required>
+                      <!-- Include ngx-mat-select-search inside mat-select -->
+                      <ngx-mat-select-search [formControl]="customerpaymenttermsSearchControl"></ngx-mat-select-search>
+                      <!-- Display mat-option for each customer -->
+                      <mat-option *ngFor="let customer of filteredCustomerpaymentterms" [value]="customer.cPaymentmethodId
+                      ">
+                        {{ customer.cPaymentmethodName }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+                  </div>
+
+
+
+
+
+
+
+
+
+
+                <div class="row">
+                    <ag-grid-angular
+                    style="width:1500px; height: 300px; border: 1px solid black;"
+                    [columnDefs]="columnDefs"
+                    [defaultColDef]="defaultColDef"
+                    [rowData]="rowData"  [gridOptions]="gridOptions"
+                   (gridReady)="onGridReady($event)"
+                    class="ag-theme-alpine" [rowHeight]="55"
+                  ></ag-grid-angular>
+                    </div>
+
+
+                    <div class="row">
+                        <button mat-raised-button color="warning" type="submit">Reset</button>
+                    </div>
+                  
+
+
+            </form>
+
+</div>
+
+
+
+
+
+
+

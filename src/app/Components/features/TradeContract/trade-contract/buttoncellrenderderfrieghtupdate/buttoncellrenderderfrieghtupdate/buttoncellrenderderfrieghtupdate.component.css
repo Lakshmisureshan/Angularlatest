@@ -1,0 +1,18 @@
+.custom-button {
+    background-color: #007bff; /* Blue background */
+    color: #fff; /* White text */
+    border: none; /* Remove border */
+     /* Padding */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 14px; /* Font size */
+    height: 10px; /* Allow button to adjust height based on content */
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    box-sizing: border-box; /* Ensure padding is included in width/height calculation */
+  }
+  
+  .custom-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }

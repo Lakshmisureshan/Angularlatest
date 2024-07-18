@@ -1,0 +1,165 @@
+<div class="container">
+
+  <h2  style ="font-weight: bold;">TRADE INITIATION FORM</h2>
+<hr/>
+  <form [formGroup]="tradeForm" (ngSubmit)="onSubmit()" class="form-container">
+
+
+    <div *ngIf="errorMessage" class="error-message mt-3">
+      {{ errorMessage }}
+    </div>
+
+
+
+
+    <div class="form-row" >
+      <div class="row">
+      <div  class="col-md-5 col-lg-6">
+      <mat-form-field appearance="outline" class="form-field custom-width">
+        <mat-label>Trade Initiation Number</mat-label>
+        <input matInput formControlName="tradeInitiationNumber" required>
+      </mat-form-field>
+    </div>
+
+    <div  class="col-md-3 col-lg-3">
+      <mat-form-field appearance="outline" class="form-field  ">
+        <mat-label>CR Reference Number</mat-label>
+        <input matInput [value]="id" readonly>
+      </mat-form-field>
+    </div>
+    <div  class="col-md-1 col-lg-1">
+    <button mat-raised-button color="primary" type="submit">Save</button>
+</div>
+<div  class="col-md-1 col-lg-1">
+
+</div>
+<div  class="col-md-1 col-lg-1">
+  <button mat-raised-button color="warning" type="submit">Reset</button>
+</div>
+    </div>
+    </div>
+
+    <div class="form-row">
+      <div class="row">
+      <mat-form-field appearance="outline" class="form-field  w-100">
+        <mat-label>Date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="date" required>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    </div>
+
+    <div class="form-row">
+      <div class="row">
+      <div  class="col-md-6 col-lg-6">
+
+      <mat-form-field appearance="outline" class="form-field  w-100">
+        <mat-label>Customer</mat-label>
+        <mat-select formControlName="customer" required>
+          <!-- Include ngx-mat-select-search inside mat-select -->
+          <ngx-mat-select-search [formControl]="customerSearchControl"></ngx-mat-select-search>
+          <!-- Display mat-option for each customer -->
+          <mat-option *ngFor="let customer of filteredCustomers" [value]="customer.id">
+            {{ customer.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+   </div>
+   <div class="col-md-6">
+    <mat-form-field appearance="outline" class="form-field  w-100">
+      <mat-label>Customer Payment Terms </mat-label>
+      <mat-select formControlName="customerpaymentterms" required>
+        <!-- Include ngx-mat-select-search inside mat-select -->
+        <ngx-mat-select-search [formControl]="customerpaymenttermsSearchControl"></ngx-mat-select-search>
+        <!-- Display mat-option for each customer -->
+        <mat-option *ngFor="let customer of filteredCustomerpaymentterms" [value]="customer.cPaymentmethodId
+        ">
+          {{ customer.cPaymentmethodName }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+    </div>
+
+<div class="form-row">
+
+  <div class="row">
+  <div class="col-md-3 col-lg-3">
+<mat-form-field class="form-field  w-100"  appearance ="outline">
+<mat-label>Products</mat-label>
+<mat-select  formControlName="product"  >
+<ngx-mat-select-search  [formControl]="productSearchcontrol"  > </ngx-mat-select-search>
+<mat-option   *ngFor="let product of filteredProducts" [value]="product.productId
+">  {{product.name}}    </mat-option>
+
+</mat-select>
+</mat-form-field>
+</div>
+
+<div class="col-md-2">
+  <mat-form-field appearance="outline" class="form-field">
+    <mat-label>Qty</mat-label>
+    <input matInput  formControlName="qty">
+  </mat-form-field>
+</div>
+<div class="col-md-2">
+  <mat-form-field appearance="outline" class="form-field">
+    <mat-label>Selling Price</mat-label>
+    <input matInput    formControlName="sellingprice">
+  </mat-form-field>
+</div>
+<div class="col-md-2">
+  <mat-form-field appearance="outline" class="form-field">
+    <mat-label>Buying Price</mat-label>
+    <input matInput  formControlName="buyingprice">
+  </mat-form-field>
+</div>
+
+<div class="col-md-2">
+
+  <mat-form-field class="form-field  w-100"  appearance ="outline">
+    <mat-label>Supplier</mat-label>
+    <mat-select  formControlName="supplier"  >
+    <ngx-mat-select-search  [formControl]="supplierSearchControl"  > </ngx-mat-select-search>
+    <mat-option   *ngFor="let sup of filteredsupplier" [value]="sup.sId
+    ">  {{sup.name}}    </mat-option>
+    
+    </mat-select>
+    </mat-form-field>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="col-md-1">
+  <button mat-raised-button color="primary" type="button" class="custom-button"   (click)="addDataToGrid($event)">+</button>
+</div>
+
+</div>
+
+ </div>
+
+
+ <div class="ag-theme-alpine" >
+  <ag-grid-angular 
+  style="width:1100px; height: 300px; border: 1px solid black;"
+  class="ag-theme-alpine" [rowHeight]="55"
+  [rowData]="rowData"  (supplierSelected)="this.onSupplierSelected.bind(this)"
+  [columnDefs]="columnDefs"  (gridReady)="onGridReady($event)"  [gridOptions]="gridOptions">
+</ag-grid-angular>
+ </div>
+<div>
+  <!--<app-suppliercelleditorcomponent   (supplierSelected)="getDatafromchild($event)"></app-suppliercelleditorcomponent>-->
+  <p>Percentage: {{ 56 | number:'1.2-3' }}</p>
+</div>
+  
+  </form>
+</div>

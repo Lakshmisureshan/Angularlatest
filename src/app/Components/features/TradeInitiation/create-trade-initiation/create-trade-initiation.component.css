@@ -1,0 +1,121 @@
+.container {
+
+   
+    width: 100%;
+    margin: auto;
+    margin: 0 auto; /* Center the container */
+    padding: 10px;
+  }
+
+
+  .custom-mat-field  {
+    padding: 8px; /* Adjust padding as needed */
+  }
+  h2 {
+    text-align: left;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    padding-top: 20px;/* Align the form items to the left */
+  }
+  
+  .form-row {
+    margin-bottom: 20px;
+  }
+  
+  .form-field {
+    width: 100%;
+    height: 66px; /* Make form fields full width */
+  }
+  
+  button[type="submit"] {
+    align-self: flex-start; /* Align the submit button to the left */
+  }
+
+  .custom-button {
+    width: 35px;  /* Adjust the width as needed */
+    height: 50px; /* Adjust the height as needed */
+    font-size: 20px; /* Adjust the font size as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .form-row {
+    margin-bottom: 10px; /* Reduce space between rows */
+  }
+  
+  .row {
+    margin-top: 0; /* Reduce the top margin of rows */
+  }
+ 
+  .form-container {
+    border: 1px solid #333; /* Change the color and width as needed */
+    padding: 20px; /* Add some padding for better appearance */
+    border-radius: 5px; /* Optional: Add border radius for rounded corners */
+    background-color: white; /* Optional: Add a background color */
+  }
+  .ag-theme-alpine {
+    --ag-header-foreground-color: white; /* Header text color */
+    --ag-header-column-separator-display: block;
+    --ag-header-background-color:#57adf4;
+    --ag-cell-horizontal-border: var(--ag-row-border-width) var(--ag-row-border-style) var(--ag-row-border-color);
+
+    --ag-foreground-color: rgb(14, 68, 145);
+    /* Changes the color of the grid background */
+    --ag-background-color: rgb(241, 247, 255);
+    /* Changes the header color of the top row */
+    --ag-header-background-color: rgb(228, 237, 250);
+    /* Changes the hover color of the row*/
+    --ag-row-hover-color: rgb(216, 226, 255);
+
+
+
+
+
+
+}
+.ecell {
+  background-color: #f0f8ff; /* Example background color for editable cells */
+  /* Add other styles as needed */
+}
+.disabled-cell {
+  opacity: 0.5; /* Example: reduce opacity for disabled appearance */
+  pointer-events: none; /* Example: disable pointer events */
+  /* Add other styles as needed */
+}
+.error-message {
+  background-color: #f8d7da; /* Red background color */
+  color: #721c24; /* Text color */
+  padding: 10px; /* Padding for better readability */
+  border: 1px solid #f5c6cb; /* Optional: Add a border for better visibility */
+  border-radius: 4px; /* Optional: Add rounded corners */
+}
+.ag-theme-alpine .ag-header-cell {
+    border: 1px solid #888 !important; /* Border for 3D effect */
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), inset 0 -1px 0 rgba(227, 73, 73, 0.1) !important; /* Inner shadows for 3D effect */
+    background: linear-gradient(to bottom, #08a1f7, red) !important; /* Gradient for 3D effect */
+    color: var(--ag-header-foreground-color) !important; /* Header text color */
+    font-weight: bold !important;
+    padding: 5px !important;
+}
+  .custom-width{
+    height:10%;
+  }
+
+  .ag-theme-alpine .ag-header-cell {
+    background-color: #08a1f7; /* Change to your desired color */
+    color: white; /* Optional: Change text color */
+}
+
+
+  .age-border {
+    border-right: 3px solid red !important;
+    border-left: 3px solid red !important
+  }

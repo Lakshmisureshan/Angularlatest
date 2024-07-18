@@ -1,0 +1,29 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .header-toolbar{
+
+   background-color: #3C4522; 
+   color:white;
+  }
+
+  .myapp
+  {
+
+    padding-left:20px ;
+  }
+
+  .sidebar{
+
+    background-color: #f5f5f5;
+    height:100%;
+    width:250px;
+  }
+
+  .content-container{
+
+height:100%;
+border:1px solid #ddd;
+
+  }

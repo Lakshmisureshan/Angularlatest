@@ -1,0 +1,53 @@
+<div class="dashboard-container" fxLayout="row" fxLayoutWrap="wrap" fxLayoutGap="12px">
+    <mat-card class="dashboard-card orders-received" fxFlex="20%">
+      <mat-card-header>
+        <div mat-card-avatar class="card-icon">
+          <mat-icon>inbox</mat-icon>
+        </div>
+        <mat-card-title>Trade Initiation Not Done</mat-card-title>
+       
+            </mat-card-header>
+      <mat-card-content>
+        <h2>{{transactionnotdone}}</h2>
+      </mat-card-content>
+    </mat-card>
+  
+    <mat-card class="dashboard-card delivered" fxFlex="20%">
+      <mat-card-header>
+        <div mat-card-avatar class="card-icon">
+            <mat-icon>inbox</mat-icon>
+        </div>
+        <mat-card-title>New Customer Requirement</mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <h2>{{newrequirement}}</h2>
+      </mat-card-content>
+    </mat-card>
+  
+    <mat-card class="dashboard-card new-orders" fxFlex="20%">
+      <mat-card-header>
+        <div mat-card-avatar class="card-icon">
+          <mat-icon>add_shopping_cart</mat-icon>
+        </div>
+        <mat-card-title>New Orders</mat-card-title>
+        <mat-card-subtitle>37% Higher Than Last Month</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <h2>128</h2>
+      </mat-card-content>
+    </mat-card>
+  
+    <mat-card class="dashboard-card total-earning" fxFlex="20%">
+      <mat-card-header>
+        <div mat-card-avatar class="card-icon">
+          <mat-icon>attach_money</mat-icon>
+        </div>
+        <mat-card-title>Total Earning</mat-card-title>
+        <mat-card-subtitle>10% Higher Than Last Month</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <h2>$25698</h2>
+      </mat-card-content>
+    </mat-card>
+  </div>

@@ -1,0 +1,14 @@
+<div   *ngIf="isApprovalVisible" class="container mt-4">
+    <h2>Trade Initiation Approval</h2>
+    <div class="alert alert-danger" role="alert">
+      <strong>Attention!</strong> Are you sure to approve this Customer Requirement {{ kk.message }}
+    </div>
+  
+    <div class="d-flex">
+      <button class="btn btn-secondary mb-2" style="width: 100px; height: 40px;" (click)="cancel()">Cancel</button>
+      <button class="btn btn-primary ml-2" style="width: 100px; height: 40px;" (click)="approve(kk.message)">Approve</button>
+    </div>
+  </div>
+  <div class="mt-4">
+    
+  </div>
